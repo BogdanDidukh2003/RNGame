@@ -2,17 +2,13 @@
 
 ## University course: Mobile Development
 
-### Lab 1
+### About
 
-Build an application with [Firebase Authentication](https://firebase.google.com/)
+React Native Game
 
 ## First time?
 
-Before moving to the next section, make sure you have [Node.js](https://nodejs.org/en/download/) installed.
-
-You need the Expo CLI for testing the application. To install expo use: 
-
-<code>npm install -g expo-cli</code>
+Refer to [React Native Documentation](https://reactnative.dev/docs/environment-setup) for environment setup
 
 ### Set up VS Code as React Native IDE (optional)
 
@@ -28,29 +24,6 @@ Additional UI packages:
 
 <code>vscode-icons</code>
 
-### Set up Atom as React Native IDE (optional)
-
-Go to Edit -> Preferences -> Install
-
-Install following packages:
-
-<code>atom-ide-ui</code>
-
-<code>ide-flowtype</code>
-
-<code>ide-typescript</code>
-(disable diagnostics)
-
-<code>atom-react-native-style</code>
-
-<code>language-babel</code>
-
-<code>prettier-atom</code>
-
-<code>file-icons</code>
-
-<code>atom-react-native-debugger</code>
-
 ## Project Structure
 
 <code>src</code> is the directory for development:
@@ -60,7 +33,7 @@ Install following packages:
   - <code>components</code> - for reusable components
   - <code>config</code> - for configuration files
   - <code>constants</code> - for set of constants
-  - <code>functions</code> - for written functions and api
+  - <code>logic</code> - for written functions and api
   - <code>navigation</code> - for navigation setup
   - <code>screens</code> - for screen user interface
   - <code>styles</code> - for reusable styles
@@ -72,15 +45,18 @@ Install following packages:
 Download required dependencies with:
 <code>npm install</code>
 
-Start a development server with:
-<code>npm start</code>
+Start application:
 
-Install the [Expo](https://expo.io/) client app on your iOS or Android phone and connect to the same local network as your computer. Use the Expo app to scan the QR code from your terminal (or opened browser tab) to open the project.
+1. Connect your device
 
-Alternatively, you may prefer to use [Expo Snack](https://snack.expo.io/) to run Expo applications directly in your browser.
+2. Start a development server with:
+<code>npx react-native start</code>
+
+3. Install application on your device with:
+<code>npx react-native run-android --no-jetifier</code>
 
 **_IMPORTANT!_** In order to use Firebase, make sure you created configuration file at <code>src/config/firebaseConfig.json</code>.
-Link at my <code>firebaseConfig.json</code> is [here](https://drive.google.com/file/d/1LAeDPq5JOZjm9srmnToakuDt_R_ScswB/view?usp=sharing)
+Link at my <code>firebaseConfig.json</code> will be here
 
 ## Development Requirements
 
