@@ -6,12 +6,12 @@ import {
   MainScreen,
 } from './../screens';
 import { SwitchThemeButton } from '../components';
-import { ThemeContext } from '../util';
+import { AppDataContext } from '../util';
 
 const Stack = createStackNavigator();
 
 export const AppStack = () => {
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = React.useContext(AppDataContext);
 
   return (
     <Stack.Navigator

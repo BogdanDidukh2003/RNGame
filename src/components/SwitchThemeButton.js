@@ -2,10 +2,10 @@ import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 import Styles from './../styles';
-import { ThemeContext } from './../util';
+import { AppDataContext } from './../util';
 
 const SwitchThemeButton = () => {
-  const { theme, switchTheme } = React.useContext(ThemeContext);
+  const { theme, switchTheme } = React.useContext(AppDataContext);
 
   return (
     <TouchableOpacity

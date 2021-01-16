@@ -3,10 +3,10 @@ import { TextInput, Text } from 'react-native';
 import CONSTANTS from '../constants';
 
 import Styles from './../styles';
-import { ThemeContext } from './../util';
+import { AppDataContext } from './../util';
 
 const InputField = (props) => {
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = React.useContext(AppDataContext);
 
   const _showErrorMessage = (message) => {
     return <Text

@@ -3,9 +3,9 @@ import { StatusBar, useColorScheme } from 'react-native';
 
 import CONSTANTS from './../constants';
 
-const ThemeContext = createContext();
+const AppDataContext = createContext();
 
-const ThemeProvider = ({ children }) => {
+const AppDataProvider = ({ children }) => {
   const [theme, setTheme] = useState(useColorScheme() || CONSTANTS.THEMES.LIGHT);
 
   const switchTheme = () => {
@@ -19,15 +19,19 @@ const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider
-      value={{ theme, switchTheme }}
+    <AppDataContext.Provider
+      value={{
+        switchTheme,
+        theme,
+        switchTheme,
+      }}
     >
       {children}
-    </ThemeContext.Provider>
+    </AppDataContext.Provider>
   );
 };
 
 export {
-  ThemeContext,
-  ThemeProvider,
+  AppDataContext,
+  AppDataProvider,
 };

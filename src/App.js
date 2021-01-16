@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { Routes } from './navigation';
-import { ThemeProvider } from './util';
+import { AppDataProvider } from './util';
 
 const App = () => {
   return (
-    <ThemeProvider>
+    <AppDataProvider>
       <Routes />
-    </ThemeProvider>
+    </AppDataProvider>
   );
 };
 

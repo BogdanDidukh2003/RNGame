@@ -2,10 +2,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 import Styles from './../styles';
-import { ThemeContext } from './../util';
+import { AppDataContext } from './../util';
 
 const MainScreen = () => {
-  const { theme } = React.useContext(ThemeContext);
+  const { theme } = React.useContext(AppDataContext);
 
   return (
     <View style={Styles[theme].container}>

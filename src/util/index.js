@@ -1,9 +1,9 @@
 import {
-  ThemeContext,
-  ThemeProvider,
-} from './ThemeManager';
+  AppDataContext,
+  AppDataProvider,
+} from './AppDataManager';
 
 export {
-  ThemeContext,
-  ThemeProvider,
+  AppDataContext,
+  AppDataProvider,
 };
