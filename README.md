@@ -1,4 +1,4 @@
-# mobile-dev-lab
+# RNGame
 
 ## University course: Mobile Development
 
