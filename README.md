@@ -56,7 +56,7 @@ Start application:
 <code>npx react-native run-android --no-jetifier</code>
 
 **_IMPORTANT!_** In order to use Firebase, make sure you created configuration file at <code>src/config/firebaseConfig.json</code>.
-Link at my <code>firebaseConfig.json</code> will be here
+Link at <code>firebaseConfig.json</code> is [here](https://drive.google.com/file/d/1xVT5dpGZOkWg86aBBJD_QECR5b_M4bob/view?usp=sharing)
 
 ## Development Requirements
 
