@@ -10,6 +10,9 @@ const CONSTANTS = {
     LIGHT_TEXT: '#D3D3D3',
     GREY_TEXT: '#808080',
     BLACK_TEXT: '#000000',
+    CARD_BLUE: '#2F7CD2',
+    CARD_WHITE: '#FFFFFF',
+    CARD_BACKGROUND: '#2B87D1',
   },
 
   FIREBASE: {

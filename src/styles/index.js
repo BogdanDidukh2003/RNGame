@@ -71,6 +71,29 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     color: CONSTANTS.COLORS.BLACK_TEXT,
   },
 
+  card: {
+    margin: 5
+  },
+
+  cardFace: {
+    borderRadius: 10,
+  },
+
+  cardFront: {
+    backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
+  },
+
+  cardBack: {
+    backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+  },
+
+  cardContainer: {
+    backgroundColor: CONSTANTS.COLORS.CARD_BACKGROUND,
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+
 });
 
 Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
@@ -138,6 +161,29 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
 
   textStyle: {
     color: CONSTANTS.COLORS.WHITE_TEXT,
+  },
+
+  card: {
+    margin: 5
+  },
+
+  cardFace: {
+    borderRadius: 10,
+  },
+
+  cardFront: {
+    backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
+  },
+
+  cardBack: {
+    backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+  },
+
+  cardContainer: {
+    backgroundColor: CONSTANTS.COLORS.CARD_BACKGROUND,
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
 
 });
