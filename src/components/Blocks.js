@@ -10,6 +10,8 @@ const Blocks = (props) => {
   const { theme } = React.useContext(AppDataContext);
   const gridSize = props.size;
   const callback = props.callback;
+  const correctTiles = props.correctTiles;
+  const [isShowing, setIsShowing] = React.useState(true);
   const tileSize = Dimensions.get('window').width / gridSize - 10;
   const elementsRef = React.useRef([...Array(gridSize*gridSize).keys()].map(() => React.createRef()));
 
@@ -17,6 +19,20 @@ const Blocks = (props) => {
       width: tileSize,
       height: tileSize
   };
+
+  const showUp = React.useCallback(()=>{
+    for (const i of correctTiles){
+      elementsRef.current[i].flip();
+    }
+  },[]);
+
+  React.useEffect(() => {
+    showUp();
+    setTimeout(() => {
+      showUp();
+      setIsShowing(false);
+    }, 2000);
+  });
 
   return (
     <View>
@@ -33,12 +49,12 @@ const Blocks = (props) => {
             <TouchableOpacity
               activeOpacity={1}
               style={[Styles[theme].cardFace, cardSize, Styles[theme].cardFront]}
-              onPress={() => elementsRef.current[row*gridSize + index].flip()}>
+              onPress={() => isShowing ? null : elementsRef.current[row*gridSize + index].flip()}>
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={1}
               style={[Styles[theme].cardFace, cardSize, Styles[theme].cardBack]}
-              onPress={() => elementsRef.current[row*gridSize + index].flip()}>
+              onPress={() => isShowing ? null : elementsRef.current[row*gridSize + index].flip()}>
             </TouchableOpacity>
           </CardFlip>
         )

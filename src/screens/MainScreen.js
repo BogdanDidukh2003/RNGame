@@ -9,7 +9,8 @@ const MainScreen = () => {
   const { theme } = React.useContext(AppDataContext);
 
   const callback = (card) => {
-    card.jiggle({ count: 2, duration: 100, progress: 0.05 });
+    // card.jiggle({ count: 2, duration: 100, progress: 0.05 });
+    console.log("Card object received");
   };
 
   return (
@@ -17,6 +18,7 @@ const MainScreen = () => {
       <Blocks
         size={4}
         callback={callback}
+        correctTiles={[1, 3, 5]}
       />
     </View>
   );
