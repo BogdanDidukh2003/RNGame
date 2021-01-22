@@ -10,6 +10,7 @@ const CONSTANTS = {
     LIGHT_TEXT: '#D3D3D3',
     GREY_TEXT: '#808080',
     BLACK_TEXT: '#000000',
+    SILVER: '#CED0CE',
   },
 
   FIREBASE: {
@@ -29,12 +30,14 @@ const CONSTANTS = {
 
   SCREEN_TITLES: {
     MAIN: 'Main',
+    PROFILE: 'Profile',
     SIGN_IN: 'Sign In',
     SIGN_UP: 'Create account',
   },
 
   SCREENS: {
     MAIN: 'Main',
+    PROFILE: 'Profile',
     SIGN_IN: 'SignIn',
     SIGN_UP: 'SignUp',
   },

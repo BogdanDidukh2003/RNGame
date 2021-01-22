@@ -46,10 +46,44 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 
+  listItemSeparator: {
+    height: 1,
+    width: '100%',
+    backgroundColor: CONSTANTS.COLORS.SILVER,
+  },
+
+  optionContainer: {
+    backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
+  optionTitle: {
+    width: '70%',
+  },
+
+  optionTitleText: {
+    fontSize: 18,
+    fontStyle: 'italic',
+  },
+
+  profileButton: {
+    fontSize: 24,
+    color: CONSTANTS.COLORS.SKY_BLUE,
+    marginRight: 8,
+    marginBottom: 4,
+  },
+
+  profileContainer: {
+    justifyContent: 'flex-start',
+    paddingHorizontal: 16,
+  },
+
   switchThemeButton: {
     fontSize: 40,
     color: CONSTANTS.COLORS.SKY_BLUE,
-    marginRight: 8,
     marginBottom: 8,
   },
 
@@ -115,10 +149,44 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 
+  listItemSeparator: {
+    height: 1,
+    width: '100%',
+    backgroundColor: CONSTANTS.COLORS.SILVER,
+  },
+
+  optionContainer: {
+    backgroundColor: CONSTANTS.COLORS.DARK_BACKGROUND,
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
+  optionTitle: {
+    width: '70%',
+  },
+
+  optionTitleText: {
+    fontSize: 18,
+    fontStyle: 'italic',
+  },
+
+  profileButton: {
+    fontSize: 24,
+    color: CONSTANTS.COLORS.LIGHT_ORANGE,
+    marginRight: 8,
+    marginBottom: 4,
+  },
+
+  profileContainer: {
+    justifyContent: 'flex-start',
+    paddingHorizontal: 16,
+  },
+
   switchThemeButton: {
     fontSize: 40,
     color: CONSTANTS.COLORS.LIGHT_ORANGE,
-    marginRight: 8,
     marginBottom: 8,
   },
 
