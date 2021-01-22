@@ -8,10 +8,14 @@ import CardFlip from 'react-native-card-flip';
 
 const Blocks = (props) => {
   const { theme } = React.useContext(AppDataContext);
+
   const gridSize = props.size;
   const callback = props.callback;
   const correctTiles = props.correctTiles;
-  const [isShowing, setIsShowing] = React.useState(true);
+  const stopInteraction = props.stopInteraction;
+  const blocksAreShown = props.blocksAreShown;
+
+  const [isShowing, setIsShowing] = React.useState(blocksAreShown);
   const tileSize = Dimensions.get('window').width / gridSize - 10;
   const elementsRef = React.useRef([...Array(gridSize*gridSize).keys()].map(() => React.createRef()));
 
@@ -20,19 +24,22 @@ const Blocks = (props) => {
       height: tileSize
   };
 
-  const showUp = React.useCallback(()=>{
+  const flipCorrect = React.useCallback(()=>{
     for (const i of correctTiles){
       elementsRef.current[i].flip();
     }
   },[]);
 
   React.useEffect(() => {
-    showUp();
-    setTimeout(() => {
-      showUp();
+    if (isShowing && !blocksAreShown){
+      flipCorrect();
       setIsShowing(false);
-    }, 2000);
-  });
+    }
+    else if (blocksAreShown) {
+      setIsShowing(true);
+      flipCorrect();
+    }
+  }, [blocksAreShown]);
 
   return (
     <View>
@@ -49,12 +56,12 @@ const Blocks = (props) => {
             <TouchableOpacity
               activeOpacity={1}
               style={[Styles[theme].cardFace, cardSize, Styles[theme].cardFront]}
-              onPress={() => isShowing ? null : elementsRef.current[row*gridSize + index].flip()}>
+              onPress={() => isShowing || stopInteraction ? null : elementsRef.current[row*gridSize + index].flip()}>
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={1}
               style={[Styles[theme].cardFace, cardSize, Styles[theme].cardBack]}
-              onPress={() => isShowing ? null : elementsRef.current[row*gridSize + index].flip()}>
+              onPress={() => isShowing || stopInteraction ? null : elementsRef.current[row*gridSize + index].flip()}>
             </TouchableOpacity>
           </CardFlip>
         )

@@ -52,6 +52,10 @@ const CONSTANTS = {
     LIGHT: 'light',
   },
 
+  GAME_LOGIC: {
+    TIME_TO_SHOW_BLOCKS: 2000,
+  },
+
 };
 
 export default CONSTANTS;
