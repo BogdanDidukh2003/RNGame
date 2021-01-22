@@ -55,12 +55,20 @@ const Blocks = (props) => {
           >
             <TouchableOpacity
               activeOpacity={1}
-              style={[Styles[theme].cardFace, cardSize, Styles[theme].cardFront]}
+              style={[
+                Styles[theme].cardFace,
+                cardSize,
+                Styles[theme].cardFront
+              ]}
               onPress={() => isShowing || stopInteraction ? null : elementsRef.current[row*gridSize + index].flip()}>
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={1}
-              style={[Styles[theme].cardFace, cardSize, Styles[theme].cardBack]}
+              style={[
+                Styles[theme].cardFace,
+                cardSize,
+                correctTiles.includes(row*gridSize + index) ? Styles[theme].cardCorrectBack : Styles[theme].cardIncorrectBack
+              ]}
               onPress={() => isShowing || stopInteraction ? null : elementsRef.current[row*gridSize + index].flip()}>
             </TouchableOpacity>
           </CardFlip>

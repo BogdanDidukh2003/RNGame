@@ -83,8 +83,12 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
   },
 
-  cardBack: {
+  cardCorrectBack: {
     backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+  },
+
+  cardIncorrectBack: {
+    backgroundColor: CONSTANTS.COLORS.CARD_GREY_BLUE,
   },
 
   cardContainer: {
@@ -175,8 +179,12 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
     backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
   },
 
-  cardBack: {
+  cardCorrectBack: {
     backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+  },
+
+  cardIncorrectBack: {
+    backgroundColor: CONSTANTS.COLORS.CARD_GREY_BLUE,
   },
 
   cardContainer: {
