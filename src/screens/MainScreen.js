@@ -10,9 +10,9 @@ const MainScreen = () => {
   const { theme } = React.useContext(AppDataContext);
   const [blocksAreShown, setBlocksAreShown] = React.useState();
 
-  const callback = (card) => {
+  const callback = (cardIndex) => {
     // card.jiggle({ count: 2, duration: 100, progress: 0.05 });
-    console.log("Card object received");
+    console.log(cardIndex);
   };
   React.useEffect(() => {
   setBlocksAreShown(true);

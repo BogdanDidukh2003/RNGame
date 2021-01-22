@@ -10,7 +10,7 @@ const Blocks = (props) => {
   const { theme } = React.useContext(AppDataContext);
 
   const gridSize = props.size;
-  const callback = props.callback;
+  const pressedCardCallback = props.callback;
   const correctTiles = props.correctTiles;
   const stopInteraction = props.stopInteraction;
   const blocksAreShown = props.blocksAreShown;
@@ -49,7 +49,6 @@ const Blocks = (props) => {
           <CardFlip
             duration={250}
             style={[cardSize, Styles[theme].card]}
-            onFlipEnd={() => callback(elementsRef.current[row*gridSize + index])}
             key={row*gridSize + index}
             ref={card => elementsRef.current[row*gridSize + index] = card}
           >
@@ -60,7 +59,10 @@ const Blocks = (props) => {
                 cardSize,
                 Styles[theme].cardFront
               ]}
-              onPress={() => isShowing || stopInteraction ? null : elementsRef.current[row*gridSize + index].flip()}>
+              onPress={() => {
+                isShowing || stopInteraction ? null : elementsRef.current[row*gridSize + index].flip();
+                pressedCardCallback(row*gridSize + index);
+              }}>
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={1}
