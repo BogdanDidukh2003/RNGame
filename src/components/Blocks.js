@@ -28,7 +28,7 @@ const Blocks = (props) => {
     for (const i of correctTiles) {
       elementsRef.current[i].flip();
     }
-  }, []);
+  }, [correctTiles]);
 
   React.useEffect(() => {
     if (isShowing && !blocksAreShown) {
