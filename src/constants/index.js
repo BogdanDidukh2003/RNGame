@@ -11,13 +11,22 @@ const CONSTANTS = {
     GREY_TEXT: '#808080',
     BLACK_TEXT: '#000000',
     SILVER: '#CED0CE',
+    GAME_MAIN: '#2B87D2',
+    GAME_DARK: '#FFB485',
   },
 
   FIREBASE: {
     USERS_COLLECTION: 'Users',
   },
 
-  LOGO: 'Lab 1',
+  GAME_DESCRIPTION: 'Memorize the squares.',
+  GAME_LOGO: 'Visual Memory',
+
+  GAME_MODES: {
+    START: 'start',
+    GAME: 'game',
+    END: 'end',
+  },
 
   MESSAGES: {
     DEFAULT: '',
