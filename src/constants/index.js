@@ -10,6 +10,10 @@ const CONSTANTS = {
     LIGHT_TEXT: '#D3D3D3',
     GREY_TEXT: '#808080',
     BLACK_TEXT: '#000000',
+    CARD_BLUE: '#2F7CD2',
+    CARD_GREY_BLUE: '#154368',
+    CARD_WHITE: '#FFFFFF',
+    CARD_BACKGROUND: '#2B87D1',
   },
 
   FIREBASE: {
@@ -47,6 +51,10 @@ const CONSTANTS = {
   THEMES: {
     DARK: 'dark',
     LIGHT: 'light',
+  },
+
+  GAME_LOGIC: {
+    TIME_TO_SHOW_BLOCKS: 2000,
   },
 
 };
