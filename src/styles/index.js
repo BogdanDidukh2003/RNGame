@@ -29,19 +29,19 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
   },
 
   cardFront: {
-    backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
+    backgroundColor: CONSTANTS.COLORS.CARD_FRONT,
   },
 
   cardCorrectBack: {
-    backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+    backgroundColor: CONSTANTS.COLORS.CARD_CORRECT_MAIN,
   },
 
   cardIncorrectBack: {
-    backgroundColor: CONSTANTS.COLORS.CARD_GREY_BLUE,
+    backgroundColor: CONSTANTS.COLORS.CARD_INCORRECT,
   },
 
   cardContainer: {
-    backgroundColor: CONSTANTS.COLORS.CARD_BACKGROUND,
+    backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row'
@@ -68,8 +68,23 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     color: 'red',
   },
 
+  gameBar: {
+    backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  gameBarText: {
+    color: CONSTANTS.COLORS.GAME_TEXT_MAIN,
+    fontSize: 32,
+    paddingVertical: 1,
+  },
+
   gameContainer: {
-    paddingBottom: '15%',
+    flex: 1,
+    backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
+    alignSelf: 'stretch',
   },
 
   gameDescription: {
@@ -184,19 +199,19 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
   },
 
   cardFront: {
-    backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
+    backgroundColor: CONSTANTS.COLORS.CARD_FRONT,
   },
 
   cardCorrectBack: {
-    backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+    backgroundColor: CONSTANTS.COLORS.CARD_CORRECT_DARK,
   },
 
   cardIncorrectBack: {
-    backgroundColor: CONSTANTS.COLORS.CARD_GREY_BLUE,
+    backgroundColor: CONSTANTS.COLORS.CARD_INCORRECT,
   },
 
   cardContainer: {
-    backgroundColor: CONSTANTS.COLORS.CARD_BACKGROUND,
+    backgroundColor: CONSTANTS.COLORS.DARK_BACKGROUND,
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row'
@@ -223,8 +238,23 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
     color: 'red',
   },
 
+  gameBar: {
+    backgroundColor: CONSTANTS.COLORS.DARK_BACKGROUND,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  gameBarText: {
+    color: CONSTANTS.COLORS.GAME_TEXT_DARK,
+    fontSize: 32,
+    paddingVertical: 1,
+  },
+
   gameContainer: {
-    paddingBottom: '15%',
+    flex: 1,
+    backgroundColor: CONSTANTS.COLORS.DARK_BACKGROUND,
+    alignSelf: 'stretch',
   },
 
   gameDescription: {

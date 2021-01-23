@@ -18,6 +18,8 @@ const MainScreen = ({ navigation }) => {
     correctTiles,
     fieldSize,
     gameMode,
+    level,
+    lives,
     onPressStartGame,
     pressedCardCallback,
   } = useMainScreenBackend(navigation);
@@ -54,12 +56,28 @@ const MainScreen = ({ navigation }) => {
   } else if (gameMode == CONSTANTS.GAME_MODES.GAME) {
     screen = (
       <>
-        <Blocks
-          size={fieldSize}
-          pressedCardCallback={pressedCardCallback}
-          correctTiles={correctTiles}
-          blocksAreShown={blocksAreShown}
-        />
+        <View
+          style={Styles[theme].gameContainer}
+        >
+          <View
+            style={[Styles[theme].gameBar, { flex: 1 }]}
+          >
+            <Text
+              style={Styles[theme].gameBarText}
+            >{`Level: ${level}  Lives: ${lives}`}</Text>
+          </View>
+
+          <View style={{ flex: 3 }} >
+            <Blocks
+              size={fieldSize}
+              pressedCardCallback={pressedCardCallback}
+              correctTiles={correctTiles}
+              blocksAreShown={blocksAreShown}
+            />
+          </View>
+
+          <View style={{ flex: 1 }} />
+        </View>
       </>
     );
   } else if (gameMode == CONSTANTS.GAME_MODES.END) {
@@ -70,7 +88,7 @@ const MainScreen = ({ navigation }) => {
   }
 
   return (
-    <View style={[Styles[theme].container, Styles[theme].gameContainer]}>
+    <View style={Styles[theme].container}>
       {screen}
     </View>
   );
