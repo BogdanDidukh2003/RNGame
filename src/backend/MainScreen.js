@@ -5,10 +5,10 @@ import CONSTANTS from '../constants';
 export const useMainScreenBackend = (navigation) => {
   const [blocksAreShown, setBlocksAreShown] = useState(false);
   const [correctTiles, setCorrectTiles] = useState([]);
-  const [fieldSize, setFieldSize] = useState(3);
+  const [fieldSize, setFieldSize] = useState(CONSTANTS.GAME_LOGIC.INIT_FIELD_SIZE);
   const [gameMode, setGameMode] = useState(CONSTANTS.GAME_MODES.START);
   const [level, setLevel] = useState(1);
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(CONSTANTS.GAME_LOGIC.MAX_LIVES);
 
   useEffect(() => {
     if (gameMode == CONSTANTS.GAME_MODES.GAME) {

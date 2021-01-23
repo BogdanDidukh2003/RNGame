@@ -28,6 +28,12 @@ const CONSTANTS = {
   GAME_DESCRIPTION: 'Memorize the squares.',
   GAME_LOGO: 'Visual Memory',
 
+  GAME_LOGIC: {
+    INIT_FIELD_SIZE: 3,
+    MAX_LIVES: 3,
+    TIME_TO_SHOW_BLOCKS: 2000,
+  },
+
   GAME_MODES: {
     START: 'start',
     GAME: 'game',
@@ -65,10 +71,6 @@ const CONSTANTS = {
   THEMES: {
     DARK: 'dark',
     LIGHT: 'light',
-  },
-
-  GAME_LOGIC: {
-    TIME_TO_SHOW_BLOCKS: 2000,
   },
 
 };
