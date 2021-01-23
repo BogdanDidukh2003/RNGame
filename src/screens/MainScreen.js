@@ -6,16 +6,20 @@ import Styles from './../styles';
 import {
   Button,
   GameIcon,
-  Hyperlink,
 } from './../components';
 import { useMainScreenBackend } from './../backend';
 import { AppDataContext } from './../util';
+import { Blocks } from './../components';
 
 const MainScreen = ({ navigation }) => {
   const { theme } = React.useContext(AppDataContext);
   const {
+    blocksAreShown,
+    correctTiles,
+    fieldSize,
     gameMode,
     onPressStartGame,
+    pressedCardCallback,
   } = useMainScreenBackend(navigation);
 
   let screen = null;
@@ -50,6 +54,12 @@ const MainScreen = ({ navigation }) => {
   } else if (gameMode == CONSTANTS.GAME_MODES.GAME) {
     screen = (
       <>
+        <Blocks
+          size={fieldSize}
+          pressedCardCallback={pressedCardCallback}
+          correctTiles={correctTiles}
+          blocksAreShown={blocksAreShown}
+        />
       </>
     );
   } else if (gameMode == CONSTANTS.GAME_MODES.END) {

@@ -11,6 +11,10 @@ const CONSTANTS = {
     GREY_TEXT: '#808080',
     BLACK_TEXT: '#000000',
     SILVER: '#CED0CE',
+    CARD_BLUE: '#2F7CD2',
+    CARD_GREY_BLUE: '#154368',
+    CARD_WHITE: '#FFFFFF',
+    CARD_BACKGROUND: '#2B87D1',
     GAME_MAIN: '#2B87D2',
     GAME_DARK: '#FFB485',
   },
@@ -59,6 +63,10 @@ const CONSTANTS = {
   THEMES: {
     DARK: 'dark',
     LIGHT: 'light',
+  },
+
+  GAME_LOGIC: {
+    TIME_TO_SHOW_BLOCKS: 2000,
   },
 
 };
