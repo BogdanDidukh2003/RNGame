@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import CONSTANTS from '../constants';
+import {
+  getNumberOfBlocksInLine,
+} from '../logic';
 
 export const useMainScreenBackend = (navigation) => {
   const [blocksAreShown, setBlocksAreShown] = useState(false);
@@ -24,6 +27,10 @@ export const useMainScreenBackend = (navigation) => {
       }, CONSTANTS.GAME_LOGIC.TIME_TO_SHOW_BLOCKS);
     }
   }, [gameMode, correctTiles]);
+
+  useEffect(() => {
+    setFieldSize(getNumberOfBlocksInLine(level));
+  }, [level]);
 
   const onPressStartGame = () => {
     setGameMode(CONSTANTS.GAME_MODES.GAME);
