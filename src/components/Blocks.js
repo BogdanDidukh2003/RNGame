@@ -10,7 +10,7 @@ const Blocks = (props) => {
   const { theme } = React.useContext(AppDataContext);
 
   const gridSize = props.size;
-  const pressedCardCallback = props.callback;
+  const pressedCardCallback = props.pressedCardCallback;
   const correctTiles = props.correctTiles;
   const stopInteraction = props.stopInteraction;
   const blocksAreShown = props.blocksAreShown;

@@ -20,6 +20,33 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     fontSize: 17,
   },
 
+  card: {
+    margin: 5
+  },
+
+  cardFace: {
+    borderRadius: 10,
+  },
+
+  cardFront: {
+    backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
+  },
+
+  cardCorrectBack: {
+    backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
+  },
+
+  cardIncorrectBack: {
+    backgroundColor: CONSTANTS.COLORS.CARD_GREY_BLUE,
+  },
+
+  cardContainer: {
+    backgroundColor: CONSTANTS.COLORS.CARD_BACKGROUND,
+    width: '100%',
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+
   container: {
     flex: 1,
     backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
@@ -130,6 +157,24 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     color: CONSTANTS.COLORS.BLACK_TEXT,
   },
 
+});
+
+Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
+
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 42,
+    width: 120,
+    backgroundColor: CONSTANTS.COLORS.GAME_DARK,
+    borderRadius: 13,
+  },
+
+  buttonText: {
+    color: CONSTANTS.COLORS.DARK_BACKGROUND,
+    fontSize: 17,
+  },
+
   card: {
     margin: 5
   },
@@ -155,24 +200,6 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row'
-  },
-
-});
-
-Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
-
-  buttonContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 42,
-    width: 120,
-    backgroundColor: CONSTANTS.COLORS.GAME_DARK,
-    borderRadius: 13,
-  },
-
-  buttonText: {
-    color: CONSTANTS.COLORS.DARK_BACKGROUND,
-    fontSize: 17,
   },
 
   container: {
@@ -283,33 +310,6 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
 
   textStyle: {
     color: CONSTANTS.COLORS.WHITE_TEXT,
-  },
-
-  card: {
-    margin: 5
-  },
-
-  cardFace: {
-    borderRadius: 10,
-  },
-
-  cardFront: {
-    backgroundColor: CONSTANTS.COLORS.CARD_BLUE,
-  },
-
-  cardCorrectBack: {
-    backgroundColor: CONSTANTS.COLORS.CARD_WHITE,
-  },
-
-  cardIncorrectBack: {
-    backgroundColor: CONSTANTS.COLORS.CARD_GREY_BLUE,
-  },
-
-  cardContainer: {
-    backgroundColor: CONSTANTS.COLORS.CARD_BACKGROUND,
-    width: '100%',
-    alignItems: 'center',
-    flexDirection: 'row'
   },
 
 });
