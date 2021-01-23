@@ -58,6 +58,7 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingVertical: 12,
   },
 
   optionTitle: {
@@ -79,12 +80,6 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
   profileContainer: {
     justifyContent: 'flex-start',
     paddingHorizontal: 16,
-  },
-
-  switchThemeButton: {
-    fontSize: 40,
-    color: CONSTANTS.COLORS.SKY_BLUE,
-    marginBottom: 8,
   },
 
   textInput: {
@@ -161,6 +156,7 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingVertical: 12,
   },
 
   optionTitle: {
@@ -182,12 +178,6 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
   profileContainer: {
     justifyContent: 'flex-start',
     paddingHorizontal: 16,
-  },
-
-  switchThemeButton: {
-    fontSize: 40,
-    color: CONSTANTS.COLORS.LIGHT_ORANGE,
-    marginBottom: 8,
   },
 
   textInput: {

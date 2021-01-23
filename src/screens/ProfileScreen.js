@@ -17,7 +17,7 @@ const ProfileScreen = () => {
     >
 
       <SettingOption
-        title='Switch Theme'
+        title='Dark Mode'
         button={<SwitchThemeButton />}
       />
 
