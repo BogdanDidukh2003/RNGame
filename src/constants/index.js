@@ -31,6 +31,7 @@ const CONSTANTS = {
   GAME_LOGIC: {
     INIT_FIELD_SIZE: 3,
     MAX_LIVES: 3,
+    MAX_MISTAKES: 2,
     TIME_TO_SHOW_BLOCKS: 2000,
   },
 

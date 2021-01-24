@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import CONSTANTS from '../constants';
 import {
   getNumberOfBlocksInLine,
+  getRandomSelectionOfBlocks,
+  getSequenceNumber,
 } from '../logic';
 
 export const useMainScreenBackend = (navigation) => {
@@ -15,7 +17,9 @@ export const useMainScreenBackend = (navigation) => {
 
   useEffect(() => {
     if (gameMode == CONSTANTS.GAME_MODES.GAME) {
-      setCorrectTiles([1, 2, 3]);
+      setCorrectTiles(
+        getRandomSelectionOfBlocks(fieldSize, getSequenceNumber(level))
+      );
     }
   }, [gameMode]);
 
