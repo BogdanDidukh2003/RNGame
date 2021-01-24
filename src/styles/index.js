@@ -107,9 +107,29 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     margin: 7,
   },
 
+  gameIconSquareSmall: {
+    backgroundColor: CONSTANTS.COLORS.GAME_MAIN,
+    height: 40,
+    width: 40,
+    borderRadius: 8,
+    margin: 2,
+  },
+
+  gameIconSquareEmptySmall: {
+    flex: 1,
+    backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
+    borderRadius: 5,
+    margin: 6,
+  },
+
   gameLogo: {
     color: CONSTANTS.COLORS.GAME_MAIN,
     fontSize: 40,
+  },
+
+  gameLogoSmall: {
+    color: CONSTANTS.COLORS.GAME_MAIN,
+    fontSize: 24,
   },
 
   hyperlink: {
@@ -277,9 +297,29 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
     margin: 7,
   },
 
+  gameIconSquareSmall: {
+    backgroundColor: CONSTANTS.COLORS.GAME_DARK,
+    height: 40,
+    width: 40,
+    borderRadius: 8,
+    margin: 2,
+  },
+
+  gameIconSquareEmptySmall: {
+    flex: 1,
+    backgroundColor: CONSTANTS.COLORS.DARK_BACKGROUND,
+    borderRadius: 5,
+    margin: 6,
+  },
+
   gameLogo: {
     color: CONSTANTS.COLORS.GAME_DARK,
     fontSize: 40,
+  },
+
+  gameLogoSmall: {
+    color: CONSTANTS.COLORS.GAME_DARK,
+    fontSize: 24,
   },
 
   hyperlink: {

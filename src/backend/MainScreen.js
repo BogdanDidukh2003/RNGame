@@ -40,6 +40,10 @@ export const useMainScreenBackend = (navigation) => {
     setGameMode(CONSTANTS.GAME_MODES.GAME);
   };
 
+  const onPressTryAgain = () => {
+    setGameMode(CONSTANTS.GAME_MODES.START);
+  };
+
   const onPressLogIn = () => { };
   const onPressSignUp = () => { };
 
@@ -57,6 +61,7 @@ export const useMainScreenBackend = (navigation) => {
     onPressLogIn,
     onPressSignUp,
     onPressStartGame,
+    onPressTryAgain,
     pressedCardCallback,
   };
 };

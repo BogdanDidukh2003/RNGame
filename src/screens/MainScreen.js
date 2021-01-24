@@ -21,6 +21,7 @@ const MainScreen = ({ navigation }) => {
     level,
     lives,
     onPressStartGame,
+    onPressTryAgain,
     pressedCardCallback,
   } = useMainScreenBackend(navigation);
 
@@ -83,6 +84,35 @@ const MainScreen = ({ navigation }) => {
   } else if (gameMode == CONSTANTS.GAME_MODES.END) {
     screen = (
       <>
+        <View style={Styles[theme].elementContainer}>
+          <GameIcon small={true} />
+        </View>
+
+        <View style={Styles[theme].elementContainer}>
+          <Text
+            style={Styles[theme].gameLogoSmall}
+          >{CONSTANTS.GAME_LOGO}</Text>
+        </View>
+
+        <View style={Styles[theme].elementContainer}>
+          <Text
+            style={[Styles[theme].gameLogo,
+            { fontSize: Math.round(Styles[theme].gameLogo.fontSize * 1.5) }]}
+          >{`Level ${level}`}</Text>
+        </View>
+
+        <View style={Styles[theme].elementContainer}>
+          <Text
+            style={Styles[theme].gameDescription}
+          >Log in or sign up to save your results.</Text>
+        </View>
+
+        <View style={Styles[theme].elementContainer}>
+          <Button
+            title='Try again'
+            onPress={onPressTryAgain}
+          />
+        </View>
       </>
     );
   }
