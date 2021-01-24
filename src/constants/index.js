@@ -10,17 +10,36 @@ const CONSTANTS = {
     LIGHT_TEXT: '#D3D3D3',
     GREY_TEXT: '#808080',
     BLACK_TEXT: '#000000',
-    CARD_BLUE: '#2F7CD2',
-    CARD_GREY_BLUE: '#154368',
-    CARD_WHITE: '#FFFFFF',
-    CARD_BACKGROUND: '#2B87D1',
+    SILVER: '#CED0CE',
+    CARD_FRONT: '#CED0CE',
+    CARD_INCORRECT: '#808080',
+    CARD_CORRECT_MAIN: '#58AFEF',
+    CARD_CORRECT_DARK: '#EB884A',
+    GAME_MAIN: '#2B87D2',
+    GAME_DARK: '#FFB485',
+    GAME_TEXT_MAIN: '#58AFEF',
+    GAME_TEXT_DARK: '#EB884A',
   },
 
   FIREBASE: {
     USERS_COLLECTION: 'Users',
   },
 
-  LOGO: 'Lab 1',
+  GAME_DESCRIPTION: 'Memorize the squares.',
+  GAME_LOGO: 'Visual Memory',
+
+  GAME_LOGIC: {
+    INIT_FIELD_SIZE: 3,
+    MAX_LIVES: 3,
+    MAX_MISTAKES: 2,
+    TIME_TO_SHOW_BLOCKS: 2000,
+  },
+
+  GAME_MODES: {
+    START: 'start',
+    GAME: 'game',
+    END: 'end',
+  },
 
   MESSAGES: {
     DEFAULT: '',
@@ -33,12 +52,14 @@ const CONSTANTS = {
 
   SCREEN_TITLES: {
     MAIN: 'Main',
+    PROFILE: 'Profile',
     SIGN_IN: 'Sign In',
     SIGN_UP: 'Create account',
   },
 
   SCREENS: {
     MAIN: 'Main',
+    PROFILE: 'Profile',
     SIGN_IN: 'SignIn',
     SIGN_UP: 'SignUp',
   },
@@ -51,10 +72,6 @@ const CONSTANTS = {
   THEMES: {
     DARK: 'dark',
     LIGHT: 'light',
-  },
-
-  GAME_LOGIC: {
-    TIME_TO_SHOW_BLOCKS: 2000,
   },
 
 };

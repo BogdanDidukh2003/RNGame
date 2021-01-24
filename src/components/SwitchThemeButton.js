@@ -1,22 +1,20 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { Switch } from 'react-native';
 
-import Styles from './../styles';
+import CONSTANTS from './../constants';
 import { AppDataContext } from './../util';
 
 const SwitchThemeButton = () => {
   const { theme, switchTheme } = React.useContext(AppDataContext);
 
   return (
-    <TouchableOpacity
-      onPress={() => {
-        switchTheme();
-      }}
-    >
-      <Text
-        style={[Styles[theme].textStyle, Styles[theme].switchThemeButton]}
-      >&#10227;</Text>
-    </TouchableOpacity>
+    <Switch
+      trackColor={{ false: '#767577', true: '#EB884A' }}
+      thumbColor={theme == CONSTANTS.THEMES.DARK ? '#d3d3d3' : '#f4f3f4'}
+      ios_backgroundColor='#3e3e3e'
+      onValueChange={switchTheme}
+      value={theme == CONSTANTS.THEMES.DARK}
+    />
   );
 };
 
