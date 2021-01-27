@@ -5,6 +5,8 @@ import CONSTANTS from './../constants';
 import {
   MainScreen,
   ProfileScreen,
+  SignInScreen,
+  SignUpScreen,
 } from './../screens';
 import { ProfileButton } from '../components';
 import { AppDataContext } from '../util';
@@ -52,6 +54,22 @@ export const AppStack = () => {
         options={{
           headerRight: null,
           title: CONSTANTS.SCREEN_TITLES.PROFILE,
+        }}
+      />
+      <Stack.Screen
+        name={CONSTANTS.SCREENS.SIGN_IN}
+        component={SignInScreen}
+        options={{
+          headerRight: null,
+          title: CONSTANTS.SCREEN_TITLES.SIGN_IN,
+        }}
+      />
+      <Stack.Screen
+        name={CONSTANTS.SCREENS.SIGN_UP}
+        component={SignUpScreen}
+        options={{
+          headerRight: null,
+          title: CONSTANTS.SCREEN_TITLES.SIGN_UP,
         }}
       />
     </Stack.Navigator>
