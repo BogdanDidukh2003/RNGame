@@ -40,12 +40,18 @@ const ProfileScreen = ({ navigation }) => {
             text='Log in'
             onPress={onPressSignIn}
           />
-          <Text> or </Text>
+          <Text
+            style={[Styles[theme].textStyle,
+            { fontSize: Styles[theme].hyperlink.fontSize }]}
+          > or </Text>
           <Hyperlink
             text='sign up'
             onPress={onPressSignUp}
           />
-          <Text> to save your results.</Text>
+          <Text
+            style={[Styles[theme].textStyle,
+            { fontSize: Styles[theme].hyperlink.fontSize }]}
+          > to save your results.</Text>
         </View>
       </>
     );

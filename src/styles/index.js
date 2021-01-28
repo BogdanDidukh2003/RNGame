@@ -145,8 +145,8 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
 
   hyperlink: {
     color: CONSTANTS.COLORS.SKY_BLUE,
+    fontSize: 18,
     fontWeight: 'bold',
-    textDecorationLine: 'underline',
   },
 
   listItemSeparator: {
@@ -362,8 +362,8 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
 
   hyperlink: {
     color: CONSTANTS.COLORS.LIGHT_ORANGE,
+    fontSize: 18,
     fontWeight: 'bold',
-    textDecorationLine: 'underline',
   },
 
   listItemSeparator: {
