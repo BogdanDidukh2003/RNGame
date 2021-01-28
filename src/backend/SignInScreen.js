@@ -18,16 +18,16 @@ export const useSignInScreenBackend = (navigation) => {
   const [requestSignIn, setRequestSignIn] = useState(false);
 
   useEffect(() => {
-    if (requestSignIn && !(emailError || passwordError)) {
+    if (requestSignIn && !(emailError || passwordError || generalError)) {
       handleSignIn();
     }
     setRequestSignIn(false);
-  }, [requestSignIn, emailError, passwordError]);
+  }, [requestSignIn, emailError, passwordError, generalError]);
 
   const handleSignIn = async () => {
     try {
       firebase.signIn(email, password).then(() => {
-        navigation.navigate(CONSTANTS.SCREENS.MAIN);
+        navigation.navigate(CONSTANTS.SCREENS.PROFILE);
       });
     } catch ({ message }) {
       setGeneralError(message);

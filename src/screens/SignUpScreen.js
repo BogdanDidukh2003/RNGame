@@ -9,7 +9,7 @@ import {
 import { useSignUpScreenBackend } from './../backend';
 import { AppDataContext } from '../util';
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
   const {
     email,
     name,
@@ -26,7 +26,7 @@ const SignUpScreen = () => {
     onChangePassword,
     onChangeRepeatPassword,
     onPressSignUp,
-  } = useSignUpScreenBackend();
+  } = useSignUpScreenBackend(navigation);
 
   const { theme } = React.useContext(AppDataContext);
 

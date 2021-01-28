@@ -8,7 +8,7 @@ import {
   validatePasswordInputOnSignUp,
 } from './../logic';
 
-export const useSignUpScreenBackend = () => {
+export const useSignUpScreenBackend = (navigation) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -27,11 +27,11 @@ export const useSignUpScreenBackend = () => {
   const [requestSignUp, setRequestSignUp] = useState(false);
 
   useEffect(() => {
-    if (requestSignUp && !(emailError || nameError || passwordError)) {
+    if (requestSignUp && !(emailError || nameError || generalError)) {
       handleSignUp();
     }
     setRequestSignUp(false);
-  }, [requestSignUp, emailError, nameError, passwordError]);
+  }, [requestSignUp, emailError, nameError, passwordError, generalError]);
 
   const _validateSignUpInput = () => {
     validateEmailInput(email, setEmail, setEmailError);
@@ -49,8 +49,8 @@ export const useSignUpScreenBackend = () => {
 
   const handleSignUp = async () => {
     try {
-      firebase.signUp(email, name, password).then(() => {
-        navigation.navigate(CONSTANTS.SCREENS.MAIN);
+      await firebase.signUp(email, name, password).then(() => {
+        navigation.navigate(CONSTANTS.SCREENS.PROFILE);
       });
     } catch ({ message }) {
       setGeneralError(message);
