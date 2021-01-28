@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { Alert } from 'react-native';
 
 import CONSTANTS from './../constants';
 import { firebase } from './../logic';
 import { AppDataContext } from './../util';
+
+const onPressSignOut = () => {
+  Alert.alert('Sign Out', 'Are you sure?', [
+    {
+      text: 'No',
+      onPress: () => { },
+      style: 'cancel',
+    },
+    {
+      text: 'Yes',
+      onPress: () => firebase.signOut(),
+    },
+  ],
+    { cancelable: false });
+};
 
 export const useProfileScreenBackend = (navigation) => {
   const { userIsSignedIn } = React.useContext(AppDataContext);
@@ -24,10 +40,6 @@ export const useProfileScreenBackend = (navigation) => {
 
   const onPressSignUp = () => {
     navigation.navigate(CONSTANTS.SCREENS.SIGN_UP);
-  };
-
-  const onPressSignOut = () => {
-    firebase.signOut();
   };
 
   return {
