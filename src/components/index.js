@@ -6,6 +6,7 @@ import GameIcon from './GameIcon';
 import ProfileButton from './ProfileButton';
 import SettingOption from './SettingOption';
 import SwitchThemeButton from './SwitchThemeButton';
+import WideButton from './WideButton';
 
 export {
   Blocks,
@@ -16,4 +17,5 @@ export {
   ProfileButton,
   SettingOption,
   SwitchThemeButton,
+  WideButton,
 };

@@ -8,6 +8,7 @@ import {
   Hyperlink,
   SettingOption,
   SwitchThemeButton,
+  WideButton,
 } from './../components';
 
 const ProfileScreen = ({ navigation }) => {
@@ -50,19 +51,36 @@ const ProfileScreen = ({ navigation }) => {
     );
   };
 
+  const renderSignOutButton = () => {
+    if (!userIsSignedIn) {
+      return null;
+    }
+    return (
+      <View style={Styles[theme].buttonMenuContainer}>
+        <WideButton
+          title='Sign Out'
+          onPress={onPressSignOut}
+        />
+      </View>
+    );
+  };
+
   return (
-    <View
-      style={[Styles[theme].container, Styles[theme].profileContainer]}
-    >
+    <>
+      <View
+        style={[Styles[theme].container, Styles[theme].profileContainer]}
+      >
 
-      {renderGreeting()}
+        {renderGreeting()}
 
-      <SettingOption
-        title='Dark Mode'
-        button={<SwitchThemeButton />}
-      />
+        <SettingOption
+          title='Dark Mode'
+          button={<SwitchThemeButton />}
+        />
 
-    </View>
+      </View>
+      {renderSignOutButton()}
+    </>
   );
 }
 

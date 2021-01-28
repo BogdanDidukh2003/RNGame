@@ -15,6 +15,11 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     borderRadius: 13,
   },
 
+  buttonMenuContainer: {
+    backgroundColor: CONSTANTS.COLORS.MAIN_BACKGROUND,
+    justifyContent: 'center',
+  },
+
   buttonText: {
     color: CONSTANTS.COLORS.MAIN_BACKGROUND,
     fontSize: 17,
@@ -192,6 +197,22 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     color: CONSTANTS.COLORS.BLACK_TEXT,
   },
 
+  wideButtonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: CONSTANTS.COLORS.SKY_BLUE_TENDER,
+    borderRadius: 16,
+    padding: 8,
+    margin: 8,
+    marginTop: 0,
+  },
+
+  wideButtonText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: CONSTANTS.COLORS.WHITE_TEXT,
+  },
+
 });
 
 Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
@@ -203,6 +224,11 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
     width: 120,
     backgroundColor: CONSTANTS.COLORS.GAME_DARK,
     borderRadius: 13,
+  },
+
+  buttonMenuContainer: {
+    backgroundColor: CONSTANTS.COLORS.DARK_BACKGROUND,
+    justifyContent: 'center',
   },
 
   buttonText: {
@@ -379,6 +405,22 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
   },
 
   textStyle: {
+    color: CONSTANTS.COLORS.WHITE_TEXT,
+  },
+
+  wideButtonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: CONSTANTS.COLORS.LIGHT_ORANGE_TENDER,
+    borderRadius: 16,
+    padding: 8,
+    margin: 8,
+    marginTop: 0,
+  },
+
+  wideButtonText: {
+    fontSize: 24,
+    fontWeight: 'bold',
     color: CONSTANTS.COLORS.WHITE_TEXT,
   },
 
