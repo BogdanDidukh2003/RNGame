@@ -24,7 +24,7 @@ const ProfileScreen = ({ navigation }) => {
     if (userIsSignedIn) {
       return (
         <>
-          <Text>
+          <Text style={Styles[theme].greeting}>
             {`Hi, ${name || 'gamer'}`}
           </Text>
         </>

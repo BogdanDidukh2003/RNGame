@@ -137,6 +137,12 @@ Styles[CONSTANTS.THEMES.LIGHT] = StyleSheet.create({
     fontSize: 24,
   },
 
+  greeting: {
+    color: CONSTANTS.COLORS.SKY_BLUE,
+    fontSize: 40,
+    fontStyle: 'italic',
+  },
+
   hyperlink: {
     color: CONSTANTS.COLORS.SKY_BLUE,
     fontWeight: 'bold',
@@ -346,6 +352,12 @@ Styles[CONSTANTS.THEMES.DARK] = StyleSheet.create({
   gameLogoSmall: {
     color: CONSTANTS.COLORS.GAME_DARK,
     fontSize: 24,
+  },
+
+  greeting: {
+    color: CONSTANTS.COLORS.LIGHT_ORANGE,
+    fontSize: 40,
+    fontStyle: 'italic',
   },
 
   hyperlink: {
