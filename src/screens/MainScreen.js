@@ -7,15 +7,17 @@ import {
   Button,
   GameIcon,
 } from './../components';
-import { useMainScreenBackend } from './../backend';
-import { AppDataContext } from './../util';
+import { useMainScreenBackend } from '../backend';
+import { AppDataContext } from '../util';
 import { Blocks } from './../components';
 
 const MainScreen = ({ navigation }) => {
   const { theme } = React.useContext(AppDataContext);
   const {
-    blocksAreShown,
+    showCorrectBlocks,
+    stopInteraction,
     correctTiles,
+    flipBackTiles,
     fieldSize,
     gameMode,
     level,
@@ -31,7 +33,7 @@ const MainScreen = ({ navigation }) => {
     screen = (
       <>
         <View style={Styles[theme].elementContainer}>
-          <GameIcon />
+          <GameIcon/>
         </View>
 
         <View style={Styles[theme].elementContainer}>
@@ -68,16 +70,18 @@ const MainScreen = ({ navigation }) => {
             >{`Level: ${level}  Lives: ${lives}`}</Text>
           </View>
 
-          <View style={{ flex: 3 }} >
+          <View style={{ flex: 3 }}>
             <Blocks
               size={fieldSize}
               pressedCardCallback={pressedCardCallback}
               correctTiles={correctTiles}
-              blocksAreShown={blocksAreShown}
+              showCorrectBlocks={showCorrectBlocks}
+              pressedTiles={flipBackTiles}
+              stopInteraction={stopInteraction}
             />
           </View>
 
-          <View style={{ flex: 1 }} />
+          <View style={{ flex: 1 }}/>
         </View>
       </>
     );
@@ -85,7 +89,7 @@ const MainScreen = ({ navigation }) => {
     screen = (
       <>
         <View style={Styles[theme].elementContainer}>
-          <GameIcon small={true} />
+          <GameIcon small={true}/>
         </View>
 
         <View style={Styles[theme].elementContainer}>
@@ -97,7 +101,7 @@ const MainScreen = ({ navigation }) => {
         <View style={Styles[theme].elementContainer}>
           <Text
             style={[Styles[theme].gameLogo,
-            { fontSize: Math.round(Styles[theme].gameLogo.fontSize * 1.5) }]}
+              { fontSize: Math.round(Styles[theme].gameLogo.fontSize * 1.5) }]}
           >{`Level ${level}`}</Text>
         </View>
 

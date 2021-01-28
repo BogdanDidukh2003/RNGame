@@ -41,6 +41,10 @@ const CONSTANTS = {
     END: 'end',
   },
 
+  VISUAL: {
+    FLIP_DURATION: 150,
+  },
+
   MESSAGES: {
     DEFAULT: '',
     FIELD_IS_EMPTY: 'field is empty',
