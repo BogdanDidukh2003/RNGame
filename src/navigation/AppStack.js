@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import CONSTANTS from './../constants';
@@ -9,6 +9,7 @@ import {
   SignUpScreen,
 } from './../screens';
 import { ProfileButton } from '../components';
+import { firebase } from '../logic';
 import { AppDataContext } from '../util';
 
 const Stack = createStackNavigator();
@@ -24,7 +25,26 @@ const renderHeaderRight = (navigation) => {
 };
 
 export const AppStack = () => {
-  const { theme } = React.useContext(AppDataContext);
+  const { theme, userIsSignedIn, changeThemeTo } = React.useContext(AppDataContext);
+
+  useEffect(() => {
+    if (userIsSignedIn) {
+      const unsubscribe = firebase.collectionReference
+        .doc(firebase.auth.currentUser.uid)
+        .onSnapshot(themeSynchronizationCallback);
+
+      return () => {
+        unsubscribe();
+      };
+    }
+  }, [userIsSignedIn]);
+
+  const themeSynchronizationCallback = (userDoc) => {
+    const userTheme = userDoc.data().theme;
+    if (userTheme) {
+      changeThemeTo(userTheme);
+    }
+  };
 
   return (
     <Stack.Navigator

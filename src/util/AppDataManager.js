@@ -50,14 +50,20 @@ const AppDataProvider = ({ children }) => {
     }
 
     changeThemeTo(newTheme);
+    if (userIsSignedIn) {
+      firebase.updateUserData({
+        theme: newTheme,
+      });
+    }
   };
 
   return (
     <AppDataContext.Provider
       value={{
-        switchTheme,
         theme,
         userIsSignedIn,
+        changeThemeTo,
+        switchTheme,
       }}
     >
       {children}
