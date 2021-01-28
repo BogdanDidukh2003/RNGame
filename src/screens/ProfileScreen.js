@@ -14,6 +14,7 @@ import {
 const ProfileScreen = ({ navigation }) => {
   const { theme, userIsSignedIn } = React.useContext(AppDataContext);
   const {
+    bestScore,
     name,
     onPressSignIn,
     onPressSignUp,
@@ -57,6 +58,24 @@ const ProfileScreen = ({ navigation }) => {
     );
   };
 
+  const renderBestScore = () => {
+    if (!userIsSignedIn) {
+      return null;
+    }
+    return (
+      <SettingOption
+        title='Best Score'
+        button={
+          <Text
+            style={[Styles[theme].textStyle,
+            Styles[theme].optionTitleText,
+            { marginRight: 16 }]}
+          >{bestScore}</Text>
+        }
+      />
+    );
+  };
+
   const renderSignOutButton = () => {
     if (!userIsSignedIn) {
       return null;
@@ -78,6 +97,8 @@ const ProfileScreen = ({ navigation }) => {
       >
 
         {renderGreeting()}
+
+        {renderBestScore()}
 
         <SettingOption
           title='Dark Mode'

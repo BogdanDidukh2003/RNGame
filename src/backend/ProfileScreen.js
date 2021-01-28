@@ -22,6 +22,7 @@ const onPressSignOut = () => {
 
 export const useProfileScreenBackend = (navigation) => {
   const { userIsSignedIn } = React.useContext(AppDataContext);
+  const [bestScore, setBestScore] = useState(0);
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -31,8 +32,21 @@ export const useProfileScreenBackend = (navigation) => {
       }).catch((error) => {
         console.error(error);
       });
+      const unsubscribe = firebase.collectionReference
+        .doc(firebase.auth.currentUser.uid)
+        .onSnapshot(bestScoreSynchronizationCallback);
+      return () => {
+        unsubscribe();
+      };
     }
   }, [userIsSignedIn])
+
+  const bestScoreSynchronizationCallback = (userDoc) => {
+    const userBestScore = userDoc.data().bestScore;
+    if (userBestScore) {
+      setBestScore(userBestScore);
+    }
+  };
 
   const onPressSignIn = () => {
     navigation.navigate(CONSTANTS.SCREENS.SIGN_IN);
@@ -43,6 +57,7 @@ export const useProfileScreenBackend = (navigation) => {
   };
 
   return {
+    bestScore,
     name,
     onPressSignIn,
     onPressSignUp,
