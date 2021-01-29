@@ -5,7 +5,9 @@ const CONSTANTS = {
     DARK_BACKGROUND: '#0A1D26',
     ADDITIONAL_BACKGROUND: '#5b5b5b',
     SKY_BLUE: '#58afef',
+    SKY_BLUE_TENDER: '#87CEEB',
     LIGHT_ORANGE: '#EB884A',
+    LIGHT_ORANGE_TENDER: '#FFB485',
     WHITE_TEXT: '#FFFFFF',
     LIGHT_TEXT: '#D3D3D3',
     GREY_TEXT: '#808080',
@@ -76,6 +78,13 @@ const CONSTANTS = {
   THEMES: {
     DARK: 'dark',
     LIGHT: 'light',
+  },
+
+  VALIDATION: {
+    EMAIL_REGEX: '^(.+)@(.+)(\\.).{2,}$',
+    FLOAT_NUMBER_REGEX: '^[\+\-]?[0-9]+(\.[0-9]+)?$',
+    PHONE_MASK: '+38 ([000]) [000] [00] [00]',
+    PHONE_REGEX: '^[0-9]{10}$',
   },
 
 };

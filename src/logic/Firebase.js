@@ -13,14 +13,13 @@ class Firebase {
     this.collectionReference = firebase.firestore().collection(CONSTANTS.FIREBASE.USERS_COLLECTION);
   }
 
-  async signUp(email, name, phone, password) {
+  async signUp(email, name, password) {
     return await this.auth
       .createUserWithEmailAndPassword(email, password)
       .then((loggedUser) => {
         const userData = this.collectionReference.doc(loggedUser.user.uid);
         userData.set({
           name: name,
-          phone: phone,
         });
       });
   }
@@ -37,6 +36,12 @@ class Firebase {
     return await this.collectionReference
       .doc(this.auth.currentUser.uid).get()
       .then(onSuccessFunction);
+  }
+
+  async updateUserData(data) {
+    return await this.collectionReference
+      .doc(this.auth.currentUser.uid)
+      .update(data);
   }
 }
 

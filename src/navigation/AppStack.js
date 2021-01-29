@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import CONSTANTS from './../constants';
 import {
   MainScreen,
   ProfileScreen,
+  SignInScreen,
+  SignUpScreen,
 } from './../screens';
 import { ProfileButton } from '../components';
+import { firebase } from '../logic';
 import { AppDataContext } from '../util';
 
 const Stack = createStackNavigator();
@@ -22,7 +25,26 @@ const renderHeaderRight = (navigation) => {
 };
 
 export const AppStack = () => {
-  const { theme } = React.useContext(AppDataContext);
+  const { theme, userIsSignedIn, changeThemeTo } = React.useContext(AppDataContext);
+
+  useEffect(() => {
+    if (userIsSignedIn) {
+      const unsubscribe = firebase.collectionReference
+        .doc(firebase.auth.currentUser.uid)
+        .onSnapshot(themeSynchronizationCallback);
+
+      return () => {
+        unsubscribe();
+      };
+    }
+  }, [userIsSignedIn]);
+
+  const themeSynchronizationCallback = (userDoc) => {
+    const userTheme = userDoc.data().theme;
+    if (userTheme) {
+      changeThemeTo(userTheme);
+    }
+  };
 
   return (
     <Stack.Navigator
@@ -52,6 +74,22 @@ export const AppStack = () => {
         options={{
           headerRight: null,
           title: CONSTANTS.SCREEN_TITLES.PROFILE,
+        }}
+      />
+      <Stack.Screen
+        name={CONSTANTS.SCREENS.SIGN_IN}
+        component={SignInScreen}
+        options={{
+          headerRight: null,
+          title: CONSTANTS.SCREEN_TITLES.SIGN_IN,
+        }}
+      />
+      <Stack.Screen
+        name={CONSTANTS.SCREENS.SIGN_UP}
+        component={SignUpScreen}
+        options={{
+          headerRight: null,
+          title: CONSTANTS.SCREEN_TITLES.SIGN_UP,
         }}
       />
     </Stack.Navigator>

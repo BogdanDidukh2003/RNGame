@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 
 import CONSTANTS from './../constants';
+import { firebase } from './../logic';
 
 const AppDataContext = createContext();
 
@@ -19,6 +20,17 @@ const configureStatusBar = (theme) => {
 
 const AppDataProvider = ({ children }) => {
   const [theme, setTheme] = useState(useColorScheme() || CONSTANTS.THEMES.LIGHT);
+  const [userIsSignedIn, setUserIsSignedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = firebase.auth.onAuthStateChanged((user) => {
+      setUserIsSignedIn(user ? true : false);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     configureStatusBar(theme);
@@ -38,13 +50,19 @@ const AppDataProvider = ({ children }) => {
     }
 
     changeThemeTo(newTheme);
+    if (userIsSignedIn) {
+      firebase.updateUserData({
+        theme: newTheme,
+      });
+    }
   };
 
   return (
     <AppDataContext.Provider
       value={{
-        switchTheme,
         theme,
+        userIsSignedIn,
+        changeThemeTo,
         switchTheme,
       }}
     >
