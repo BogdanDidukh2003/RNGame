@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import CONSTANTS from '../constants';
 import {
+  firebase,
   getNumberOfBlocksInLine,
   getRandomSelectionOfBlocks,
   getSequenceNumber,
 } from '../logic';
+import { AppDataContext } from './../util';
 
 export const useGameScreenBackend = (navigation) => {
+  const { userIsSignedIn } = React.useContext(AppDataContext);
+
   const [showCorrectBlocks, setShowCorrectBlocks] = useState(false);
   const [stopInteraction, setStopInteraction] = useState(false);
   const [correctTiles, setCorrectTiles] = useState([]);
@@ -29,6 +33,20 @@ export const useGameScreenBackend = (navigation) => {
       setCorrectTiles(
         getRandomSelectionOfBlocks(fieldSize, getSequenceNumber(level))
       );
+    } else if (gameMode == CONSTANTS.GAME_MODES.END) {
+      if (userIsSignedIn) {
+        let remoteBestScore = 0;
+        firebase.getUserData((userDoc) => {
+          remoteBestScore = userDoc.data().bestScore;
+          if (remoteBestScore && (remoteBestScore < bestScore)) {
+            firebase.updateUserData({
+              bestScore: bestScore,
+            });
+          }
+        }).catch((error) => {
+          console.error(error);
+        });
+      }
     }
   }, [gameMode]);
 
