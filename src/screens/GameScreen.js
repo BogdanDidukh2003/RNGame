@@ -80,7 +80,7 @@ const GameScreen = ({ navigation }) => {
         <View style={Styles[theme].elementContainer}>
           <Text
             style={Styles[theme].gameDescription}
-          >Log in or sign up to save your results.</Text>
+          >Thanks for the game</Text>
         </View>
 
         <View style={Styles[theme].elementContainer}>
