@@ -57,6 +57,7 @@ const CONSTANTS = {
   },
 
   SCREEN_TITLES: {
+    GAME: 'Visual Memory',
     MAIN: 'Main',
     PROFILE: 'Profile',
     SIGN_IN: 'Sign In',
@@ -64,6 +65,7 @@ const CONSTANTS = {
   },
 
   SCREENS: {
+    GAME: 'Game',
     MAIN: 'Main',
     PROFILE: 'Profile',
     SIGN_IN: 'SignIn',

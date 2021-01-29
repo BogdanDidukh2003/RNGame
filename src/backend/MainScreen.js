@@ -1,114 +1,12 @@
-import { useState, useEffect } from 'react';
-
-import CONSTANTS from '../constants';
-import {
-  getNumberOfBlocksInLine,
-  getRandomSelectionOfBlocks,
-  getSequenceNumber,
-} from '../logic';
+import CONSTANTS from './../constants';
 
 export const useMainScreenBackend = (navigation) => {
-  const [showCorrectBlocks, setShowCorrectBlocks] = useState(false);
-  const [stopInteraction, setStopInteraction] = useState(false);
-  const [correctTiles, setCorrectTiles] = useState([]);
-  const [pressedTiles, setPressedTiles] = useState([]);
-  const [flipBackTiles, setFlipBackTiles] = useState([]);
-  const [fieldSize, setFieldSize] = useState(CONSTANTS.GAME_LOGIC.INIT_FIELD_SIZE);
-  const [gameMode, setGameMode] = useState(CONSTANTS.GAME_MODES.START);
-  const [level, setLevel] = useState(1);
-  const [lives, setLives] = useState(CONSTANTS.GAME_LOGIC.MAX_LIVES);
-  const [mistakes, setMistakes] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
-
-  useEffect(() => {
-    if (gameMode == CONSTANTS.GAME_MODES.GAME) {
-      setCorrectTiles(
-        getRandomSelectionOfBlocks(fieldSize, getSequenceNumber(level))
-      );
-    }
-  }, [gameMode]);
-
-  useEffect(() => {
-    if (gameMode == CONSTANTS.GAME_MODES.GAME) {
-      setShowCorrectBlocks(true);
-      setTimeout(() => {
-        setShowCorrectBlocks(false);
-      }, CONSTANTS.GAME_LOGIC.TIME_TO_SHOW_BLOCKS);
-    }
-  }, [gameMode, correctTiles]);
-
-  useEffect(() => {
-    if (level > bestScore) {
-      setBestScore(level);
-    }
-    setStopInteraction(true);
-    setFlipBackTiles(pressedTiles);
-    setTimeout(() => {
-      setStopInteraction(false);
-      setMistakes(0);
-      setPressedTiles([]);
-      setFieldSize(getNumberOfBlocksInLine(level));
-      setCorrectTiles(
-        getRandomSelectionOfBlocks(fieldSize, getSequenceNumber(level))
-      );
-    }, CONSTANTS.VISUAL.FLIP_DURATION + 100);
-  }, [level]);
-
-  useEffect(() => {
-    if (mistakes > CONSTANTS.GAME_LOGIC.MAX_MISTAKES) {
-      setLives(lives - 1);
-      setMistakes(0);
-    }
-  }, [mistakes]);
-
-  useEffect(() => {
-    if (lives <= 0) {
-      setGameMode(CONSTANTS.GAME_MODES.END);
-    }
-  }, [lives]);
-
-  useEffect(() => {
-    if (correctTiles.every(element => pressedTiles.indexOf(element) > -1) && pressedTiles.length != 0) {
-      setLevel(level + 1);
-    }
-  }, [pressedTiles]);
 
   const onPressStartGame = () => {
-    setGameMode(CONSTANTS.GAME_MODES.GAME);
-  };
-
-  const onPressTryAgain = () => {
-    setLives(CONSTANTS.GAME_LOGIC.MAX_LIVES);
-    setMistakes(0);
-    setLevel(1);
-    setGameMode(CONSTANTS.GAME_MODES.START);
-  };
-
-  const onPressLogIn = () => {
-  };
-  const onPressSignUp = () => {
-  };
-
-  const pressedCardCallback = (cardIndex) => {
-    setPressedTiles([...pressedTiles, cardIndex])
-    if (!correctTiles.includes(cardIndex)) {
-      setMistakes(mistakes + 1);
-    }
+    navigation.navigate(CONSTANTS.SCREENS.GAME)
   };
 
   return {
-    showCorrectBlocks,
-    stopInteraction,
-    correctTiles,
-    flipBackTiles,
-    fieldSize,
-    gameMode,
-    level,
-    lives,
-    onPressLogIn,
-    onPressSignUp,
     onPressStartGame,
-    onPressTryAgain,
-    pressedCardCallback,
   };
 };

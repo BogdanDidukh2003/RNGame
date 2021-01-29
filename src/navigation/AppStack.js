@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import CONSTANTS from './../constants';
 import {
+  GameScreen,
   MainScreen,
   ProfileScreen,
   SignInScreen,
@@ -61,6 +62,13 @@ export const AppStack = () => {
         },
       })}
     >
+      <Stack.Screen
+        name={CONSTANTS.SCREENS.GAME}
+        component={GameScreen}
+        options={{
+          title: CONSTANTS.SCREEN_TITLES.GAME,
+        }}
+      />
       <Stack.Screen
         name={CONSTANTS.SCREENS.MAIN}
         component={MainScreen}
